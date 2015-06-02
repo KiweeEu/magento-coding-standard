@@ -22,7 +22,7 @@ class Ecg_Sniffs_Security_ForbiddenFunctionSniff extends Generic_Sniffs_PHP_Forb
         '^com_load_typelib$' => null,
         //'^copy$' => null,
         '^create_function$' => null,
-        '^curl_.*$' => null,
+        //'^curl_.*$' => null,
         '^cyrus_connect$' => null,
         '^dba_.*$' => null,
         '^dbase_.*$' => null,
