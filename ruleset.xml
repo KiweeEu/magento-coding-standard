@@ -67,7 +67,9 @@
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
 
     <!-- Verifies that inline control statements are not present. -->
-    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <exclude-pattern>*\.(?!phtml$)</exclude-pattern>
+    </rule>
 
     <!-- Disallow multiple Statements per Line -->
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
@@ -111,7 +113,7 @@
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
 
     <!-- PHP constants and variables should be defined properly regarding underscores and correct Casing -->
-    <rule ref="Zend.NamingConventions.ValidVariableName"/>
+    <!-- Note that this excludes phtml files as frontend coding standard tells devs to use use leading underscore -->
 
     <!-- PHP code MUST contain properly declared classes and functions -->
     <rule ref="PEAR.Classes.ClassDeclaration"/>
@@ -159,7 +161,9 @@
     <!-- Correct Usage of this in Static Members -->
     <rule ref="Squiz.Scope.StaticThisUsage"/>
     <!-- Correct Usage of echo and Formatting of strings to be echoed -->
-    <rule ref="Squiz.Strings.EchoedStrings"/>
+    <rule ref="Squiz.Strings.EchoedStrings">
+        <exclude-pattern>*\.(?!phtml$)</exclude-pattern>
+	</rule>
     <!-- Checks Spacing around Logical Operators in Conditions -->
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
 

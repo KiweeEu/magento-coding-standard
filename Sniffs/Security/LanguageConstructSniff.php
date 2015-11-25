@@ -21,6 +21,7 @@ class Ecg_Sniffs_Security_LanguageConstructSniff implements PHP_CodeSniffer_Snif
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
+
         $tokens = $phpcsFile->getTokens();
 
         if ($tokens[$stackPtr]['code'] === T_BACKTICK) {
@@ -34,7 +35,11 @@ class Ecg_Sniffs_Security_LanguageConstructSniff implements PHP_CodeSniffer_Snif
         } else {
             $code = 'DirectOutput';
         }
-        $phpcsFile->addWarning('Use of %s language construct is discouraged.',
-            $stackPtr, $code, array($tokens[$stackPtr]['content']));
+
+        $filename = $phpcsFile->getFilename();
+        if (!stripos($filename, '.phtml')) {
+            $phpcsFile->addWarning('Use of %s language construct is discouraged.',
+                $stackPtr, $code, array($tokens[$stackPtr]['content']));
+        }
     }
 }
