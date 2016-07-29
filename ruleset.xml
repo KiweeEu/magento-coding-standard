@@ -145,8 +145,6 @@
 
     <!-- Tests that the asterisks in a doc comment align correctly -->
     <rule ref="Squiz.Commenting.DocCommentAlignment"/>
-    <!-- Verifies that a @throws tag exists for a function that throws exceptions -->
-    <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
 
     <!-- Checks Usage of Increment/Decrement Operators, i.e. $a -= 1; -->
     <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
